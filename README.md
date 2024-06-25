@@ -1,8 +1,11 @@
 # redux-module-in-action
 
+## Redux Toolkit in action featuring React
+
 This repository provides a practical guide and code examples for implementing Redux modules effectively in your React applications.
 
 It demonstrates:
+
 - Setting up Redux modules with clear structure and organization.
 - Handling actions, reducers, and selectors for various functionalities.
 - Integrating Redux modules with React components for seamless data flow.
