@@ -1,4 +1,4 @@
-# Redux and redux-toolkit
+# Redux and Redux-toolkit
 
 ## React is a library used to build user interfaces
 
@@ -8,7 +8,7 @@
 
 ## Redux can be used with any UI library or framework such as React, Angular, Vue, or even vanilla JavaScript
 
-## `redux-toolkit` is a library for efficient redux development.
+## `redux-toolkit` is a library for efficient redux development
 
 It is an enhance version of redux that help smoother the developer experience by addressing few redux shortcomings
 
@@ -30,3 +30,9 @@ It is an enhance version of redux that help smoother the developer experience by
   - The app state is updated frequently over time.
   - The logic to update the state may be complex.
   - The app has a medium or large-sized codebase, and might be worked on by many people.
+
+## Redux operates under the three core princple/ concepts
+
+1. Store - holds the state of your application. Only one store for the entire application (recommended)
+2. Action - describe **what** happened in the application.
+3. Reducer - handles the action and decides **how** to handle the state.
