@@ -2,7 +2,7 @@
 
 ## Define Redux
 
-### Redux is a predictable state container for JavaScript apps.
+### Redux is a predictable state container for JavaScript apps
 
 1. It is for JavaScript apps
 2. It is a state container
