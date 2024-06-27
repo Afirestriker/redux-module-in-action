@@ -1,12 +1,10 @@
 # Redux
 
-## Define Redux
+## Redux is a predictable state container for JavaScript apps
 
-### Redux is a predictable state container for JavaScript apps
-
-1. It is for JavaScript apps
-2. It is a state container
-3. It is predictable
+1. It is for **JavaScript apps**
+2. It is a **state container**
+3. It is **predictable**
 
 ### Redux is for JavaScript applications
 
@@ -25,7 +23,7 @@
 - Redux is a state container.
 - The state of the application can change.
 - For ex: In a todo list app - item (**pending**) --> item (**completed**).
-- In redux, a pattern is enforced to ensure all state transitions are explicit and can be tracked.
+- In redux, a **pattern** is enforced to ensure all state transitions are explicit and can be tracked.
 - Thus, the changes to your application's state become predictable.
 
 ## The Three Core Concepts in Redux
@@ -38,12 +36,11 @@
 
 1. A **`store`** that holds the state of your application.
 2. An **`action`** that describe what happened in the application.
-   - The only way your application can interact with the store.
 3. A **`reducer`** which handles the action and decides how to handle the state.
 
 ## The Three Fundamental Principle of Redux
 
-The three princple basically describe the redux pattern. In other word, it descibe how to write code base on the three core concepts.
+The three principle basically describe the **redux pattern**. In other word, it descibe *how to write code base on the three core concepts.*
 
 ### First Principle: `Store`
 
