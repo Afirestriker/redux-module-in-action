@@ -70,6 +70,7 @@ The three principle basically describe the **redux pattern**. In other word, it 
 - The state is readonly and the only way to change the state is to emmit an action which is an object describing what happened.
 - Action is the only way your application can interact with the store.
 - Action carry some information from your app to the redux store.
+- In reduxtion the convention is to use a property called `payload` for any additional information you want to send. And these is for every action in your codebase.
 - Action are plain JavaScript objects.
   - Must have a `type` property that describes something that happened in the application.
   - The `type` property is typically defined as string constants.
