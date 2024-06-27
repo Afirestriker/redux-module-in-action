@@ -2,7 +2,7 @@ const redux = require('redux');
 const createStore = redux.createStore;
 
 const CAKE_ORDERED = 'CAKE_ORDERED';
-const CAKE_RESTOCK = 'CAKE_RESTOCK';
+const CAKE_RESTOCKED = 'CAKE_RESTOCKED';
 
 // action creator function that return an action
 function orderCake() {
@@ -13,9 +13,10 @@ function orderCake() {
     }
 }
 
-function restockCake() {
+function restockCake(qty = 0) {
     return {
-        type: CAKE_RESTOCK
+        type: CAKE_RESTOCKED,
+        quantity: qty
     }
 }
 
@@ -34,10 +35,10 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 noOfCakes: state.noOfCakes - 1
             }
-        case CAKE_RESTOCK:
+        case CAKE_RESTOCKED:
             return {
                 ...state,
-                noOfCakes: state.noOfCakes + 3
+                noOfCakes: state.noOfCakes + action.quantity
             }
         default:
             return state
@@ -58,7 +59,7 @@ store.dispatch(orderCake());
 store.dispatch(orderCake());
 store.dispatch(orderCake());
 
-store.dispatch(restockCake());
+store.dispatch(restockCake(3));
 
 // responsibility 5: unsubscribe to listener
 unsubscribe();
