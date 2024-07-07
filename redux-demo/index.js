@@ -1,5 +1,6 @@
 const redux = require('redux');
 const createStore = redux.createStore;
+const bindActionCreators = redux.bindActionCreators;
 
 // define constant action type to prevent vulnerability
 const CAKE_ORDERED = 'CAKE_ORDERED';
@@ -56,10 +57,16 @@ console.log("Initial State", store.getState());
 const unsubscribe = store.subscribe(() => console.log("Updated state", store.getState()));
 
 // responsibility 3: expose dispatch to allow action to be perform on the state
-store.dispatch(orderCake());
-store.dispatch(orderCake());
-store.dispatch(orderCake());
-store.dispatch(restockCake(3));
+// store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(restockCake(3));
+
+const actions = bindActionCreators({ orderCake, restockCake }, store.dispatch);
+actions.orderCake();
+actions.orderCake();
+actions.orderCake();
+actions.restockCake(3)
 
 // responsibility 5: unsubscribe to listener
 unsubscribe();

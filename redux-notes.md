@@ -112,6 +112,18 @@ The three principle basically describe the **redux pattern**. In other word, it 
 
   ![Redux-Princple](./redux-principle.png)
 
+## Redux helper functions
+
+### redux.bindActionCreators() [*For: Good to have a knowledge*]
+
+- bindActionCreators offers an alternative way to dispatch an action.
+- It accept two arguments
+  - Arg-1: An object whose values are action creators functions.
+  - Arg-2: To what the action creators should bind with.
+- The bindActionCreators, turns the object **Arg-1** whose values are action creators,
+  into an object with the same keys, where every action creators wrapped into a
+  dispatch call. So they may be call directly.
+
 ## Q&A
 
 **Q. What is Redux?**
