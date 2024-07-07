@@ -120,9 +120,28 @@ The three principle basically describe the **redux pattern**. In other word, it 
 - It accept two arguments
   - Arg-1: An object whose values are action creators functions.
   - Arg-2: To what the action creators should bind with.
-- The bindActionCreators, turns the object **Arg-1** whose values are action creators,
-  into an object with the same keys, where every action creators wrapped into a
-  dispatch call. So they may be call directly.
+- The bindActionCreators, turns the object **Arg-1** whose values are action
+  creators, into an object with the same keys, where every action creators
+  wrapped into a dispatch call. So they may be call directly.
+
+### redux.combineReducers
+
+- Like actions, redux can have more that one store and reducer functions.
+- But since, redux maintain a global state under one object, we need to combine
+  them into one **rootReducer**.
+- redux.combineReducers() is an function to do so. It accept an object as an
+  parameter, coorespondig to key:value pair to various reducers.
+- In this case, each reducer is managing its own part of the application global state.
+- The state parameter is different for every reducer and cooresponds to the part
+  of the state it manages.
+- When we dispatch an action, all the combined reducers will recieve that action.
+  The difference is that, one of them acts on that action while the others
+  ignores it.
+- Moreover when the application grows in size, we can split the reducers into
+  separate files, and keep them completely indipendent for managing different
+  feature. Each having it own part of the state, action-creators, and reducer
+  functions.
+- Example: A Auth Reducer, A User Reducer, A Profile Reducer
 
 ## Q&A
 
