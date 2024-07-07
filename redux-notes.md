@@ -82,7 +82,7 @@ The three principle basically describe the **redux pattern**. In other word, it 
         // Scanning the OR code and place an order - CAKE_ORDERED
         {
             type: 'CAKE_ORDERED',
-            payload: any // (options) carry extra information with action
+            payload: any // (optional) carry additional information with action
         }
     ```
 

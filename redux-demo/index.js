@@ -1,6 +1,7 @@
 const redux = require('redux');
 const createStore = redux.createStore;
 
+// define constant action type to prevent vulnerability
 const CAKE_ORDERED = 'CAKE_ORDERED';
 const CAKE_RESTOCKED = 'CAKE_RESTOCKED';
 
@@ -58,7 +59,6 @@ const unsubscribe = store.subscribe(() => console.log("Updated state", store.get
 store.dispatch(orderCake());
 store.dispatch(orderCake());
 store.dispatch(orderCake());
-
 store.dispatch(restockCake(3));
 
 // responsibility 5: unsubscribe to listener
