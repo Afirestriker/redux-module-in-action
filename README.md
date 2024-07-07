@@ -15,4 +15,4 @@ Whether you're new to Redux or looking to improve your skills, this repository o
 
 **Feel free to clone, explore, and learn!**
 
-**Do not forget to Star the repo to stay updated and support the project!**
+**Do not forget to Star ⭐ the repo to stay updated and support the project!**
