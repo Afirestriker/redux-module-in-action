@@ -1,6 +1,7 @@
 const redux = require('redux');
 const createStore = redux.createStore;
 const bindActionCreators = redux.bindActionCreators;
+const combineReducers = redux.combineReducers;
 
 // define constant action type to prevent vulnerability
 const CAKE_ORDERED = 'CAKE_ORDERED';
@@ -50,6 +51,7 @@ const initialIceCreamState = {
 
 // state = initialState,
 // so when the application start's, the initial state of the application is pass in as a argument to the reducer function
+// then the value return by switch default is used as an initial state of that reducer
 const cakeReducer = (state = initialCakeState, action = {}) => {
     switch(action.type) {
         case CAKE_ORDERED:
@@ -72,18 +74,27 @@ const iceCreamReducer = (state = initialIceCreamState, action = {}) => {
         case ICECREAM_ORDERED:
             return {
                 ...state,
-                numOfIceCreams: state.numOfIceCreams + action.payload
+                numOfIceCreams: state.numOfIceCreams - action.payload
             }
         case ICECREAM_RESTOCKED:
             return {
                 ...state,
                 numOfIceCreams: state.numOfIceCreams + action.payload
             }
+        default:
+            return state;
     }
 }
 
+// combine multiple reducers
+// rootReducer - convention to call all combine reduer as rootReducer
+const rootReducer = combineReducers({
+    cake: cakeReducer,
+    iceCream: iceCreamReducer
+});
+
 // responsiblity 1: Hold the application state
-const store = createStore(reducer);
+const store = createStore(rootReducer);
 
 // responsiblity 2: export the getState() function to access the state
 console.log("Initial State", store.getState());
@@ -97,11 +108,14 @@ const unsubscribe = store.subscribe(() => console.log("Updated state", store.get
 // store.dispatch(orderCake());
 // store.dispatch(restockCake(3));
 
-const actions = bindActionCreators({ orderCake, restockCake }, store.dispatch);
+const actions = bindActionCreators({ orderCake, restockCake, orderIceCream, restockIceCream }, store.dispatch);
 actions.orderCake();
 actions.orderCake();
 actions.orderCake();
 actions.restockCake(3)
+actions.orderIceCream();
+actions.orderIceCream();
+actions.restockIceCream(2);
 
 // responsibility 5: unsubscribe to listener
 unsubscribe();
