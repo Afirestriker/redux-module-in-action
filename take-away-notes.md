@@ -25,8 +25,8 @@ It is an enhance version of redux that help smoother the developer experience by
 ## When should you use redux in the react application?
 
 - Not all application need redux.
-- It might be neeful where
-  - Scenarios, where you large amounts of application state that are needed in manay places in the app.
+- It might be needful in scenarios where:
+  - You have a large amounts of application state that are needed in many places in the app.
   - The app state is updated frequently over time.
   - The logic to update the state may be complex.
   - The app has a medium or large-sized codebase, and might be worked on by many people.
@@ -34,5 +34,5 @@ It is an enhance version of redux that help smoother the developer experience by
 ## Redux operates under the three core princple/ concepts
 
 1. Store - holds the state of your application. Only one store for the entire application (recommended)
-2. Action - describe **what** happened in the application.
-3. Reducer - handles the action and decides **how** to handle the state.
+2. Action - describe **What** happened in the application.
+3. Reducer - handles the action and decides **How** to handle the state.
