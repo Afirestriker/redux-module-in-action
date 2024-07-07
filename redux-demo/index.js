@@ -5,6 +5,8 @@ const bindActionCreators = redux.bindActionCreators;
 // define constant action type to prevent vulnerability
 const CAKE_ORDERED = 'CAKE_ORDERED';
 const CAKE_RESTOCKED = 'CAKE_RESTOCKED';
+const ICECREAM_ORDERED = 'ICECREAM_ORDERED';
+const ICECREAM_RESTOCKED = 'ICECREAM_RESTOCKED';
 
 // action creator function that return an action
 function orderCake() {
@@ -22,15 +24,33 @@ function restockCake(qty = 0) {
     }
 }
 
+function orderIceCream(qty = 1) {
+    return {
+        type: ICECREAM_ORDERED,
+        payload: qty
+    }
+}
+
+function restockIceCream(qty = 1) {
+    return {
+        type: ICECREAM_RESTOCKED,
+        payload: qty
+    }
+}
+
 // (previousState, action) => newState
 
-const initialState = {
+const initialCakeState = {
     noOfCakes: 10
+}
+
+const initialIceCreamState = {
+    numOfIceCreams: 20
 }
 
 // state = initialState,
 // so when the application start's, the initial state of the application is pass in as a argument to the reducer function
-const reducer = (state = initialState, action = {}) => {
+const cakeReducer = (state = initialCakeState, action = {}) => {
     switch(action.type) {
         case CAKE_ORDERED:
             return {
@@ -44,6 +64,21 @@ const reducer = (state = initialState, action = {}) => {
             }
         default:
             return state
+    }
+}
+
+const iceCreamReducer = (state = initialIceCreamState, action = {}) => {
+    switch(action.type) {
+        case ICECREAM_ORDERED:
+            return {
+                ...state,
+                numOfIceCreams: state.numOfIceCreams + action.payload
+            }
+        case ICECREAM_RESTOCKED:
+            return {
+                ...state,
+                numOfIceCreams: state.numOfIceCreams + action.payload
+            }
     }
 }
 
