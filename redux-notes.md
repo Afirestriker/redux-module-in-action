@@ -44,7 +44,7 @@ The three principle basically describe the **redux pattern**. In other word, it 
 
 ### First Principle: `Store`
 
-- **"The global state of your application is store as an object inside a single store"**
+- **"The global state of your application is stored as an object inside a single store"**
 - Maintain our application state in a single object which would be managed by the Redux store.
 - Responsibilities:
   - Holds application state.
@@ -82,7 +82,7 @@ The three principle basically describe the **redux pattern**. In other word, it 
         // Scanning the OR code and place an order - CAKE_ORDERED
         {
             type: 'CAKE_ORDERED',
-            payload: any // (options) carry information with action
+            payload: any // (options) carry extra information with action
         }
     ```
 
@@ -121,8 +121,8 @@ A. Redux is a predictable state container for JavaScript apps.
 **Q. Why Redux?**
 
 A.
-If you want to manage the global state of your application in a predictable way, redux cna help you.
+If you want to manage the global state of your application in a predictable way, redux can help you.
 
-The patterns and tools provided by Redux make it easier to understand when, where, why, and how the state in your application is being updated, and how your application logic will behave when those changes occur.
+The patterns and tools provided by Redux make it easier to understand **When**, **Where**, **Why**, and **How** the state in your application is being updated, and how your application logic will behave when those changes occur.
 
 Redux guides you toward writing code that is predictable and testable, whcih helps give you confidence that your application will work as expected.
